@@ -1,0 +1,62 @@
+{
+  "name": "danielhackiewicz/typo3",
+  "description": "Done with ♥ and TYPO3 & Tailwind CSS",
+  "type": "project",
+  "minimum-stability": "stable",
+  "repositories": [
+      {
+        "type": "path",
+        "url": "src/packages/site_package"
+      }
+    ],
+  "license": "GPL-2.0-or-later",
+  "config": {
+    "platform": {
+      "php": "8.2"
+    },
+    "allow-plugins": {
+      "typo3/cms-composer-installers": true,
+      "typo3/class-alias-loader": true
+    }
+  },
+  "authors": [{
+    "name": "Daniel Hackiewicz",
+    "email": "dhackiewicz@gmail.com"
+  }],
+  "require": {
+    "typo3/cms-core": "13.4.17",
+    "typo3/cms-backend": "13.4.17",
+    "typo3/cms-belog": "13.4.17",
+    "typo3/cms-beuser": "13.4.17",
+    "typo3/cms-extensionmanager": "13.4.17",
+    "typo3/cms-felogin": "13.4.17",
+    "typo3/cms-filelist": "13.4.17",
+    "typo3/cms-filemetadata": "13.4.17",
+    "typo3/cms-fluid": "13.4.17",
+    "typo3/cms-fluid-styled-content": "13.4.17",
+    "typo3/cms-frontend": "13.4.17",
+    "typo3/cms-info": "13.4.17",
+    "typo3/cms-install": "13.4.17",
+    "typo3/cms-recycler": "13.4.17",
+    "typo3/cms-rte-ckeditor": "13.4.17",
+    "typo3/cms-seo": "13.4.17",
+    "typo3/cms-setup": "13.4.17",
+    "typo3/cms-tstemplate": "13.4.17",
+    "typo3/cms-viewpage": "13.4.17",
+    "typo3/cms-redirects": "13.4.17",
+    "georgringer/news": "12.3.1",
+    "studio-thom-pfister/site-package": "dev-main",
+    "friendsoftypo3/content-blocks": "^1.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Studio\\SitePackage\\": "src/packages/site_package/Classes"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": "public"
+    }
+  }
+}

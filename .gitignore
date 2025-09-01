@@ -1,0 +1,54 @@
+# TYPO3 core and vendor files
+/vendor/
+/config/
+/typo3_src/
+/public/
+
+# Local environment files
+/.env
+/config/system/settings.php
+/config/system/additional.php
+
+# Cache and temporary files
+/var/*
+/typo3temp/*
+/public/typo3temp/*
+/public/fileadmin/_processed_/*
+/public/fileadmin/_temp_/*
+/public/fileadmin/_migrated/*
+
+# Logs
+/var/log/*
+/var/transient/*
+/var/session/*
+
+# Composer related
+/composer.lock
+/.composer/
+
+# Node.js / Frontend related
+/node_modules/
+/package-lock.json
+/yarn.lock
+
+# IDE / Editor settings
+/.idea/
+/.vscode/
+/*.swp
+/.ddev/
+/ddev/
+
+# Docker files
+/docker-compose.yml
+/docker-compose.override.yml
+/docker-compose.override.yml
+
+# MacOS files
+.DS_Store
+/.DS_Store
+**/.DS_Store
+
+# Tailwind files
+!/src/*
+!composer.json
+/src/Resources/Public/Tailwind/node_modules/

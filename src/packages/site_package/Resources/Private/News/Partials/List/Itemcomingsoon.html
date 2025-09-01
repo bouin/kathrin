@@ -1,0 +1,52 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<!--=====================Partials/List/Itemscomimngsson.html -->
+
+<div class="property-item-2 pb-8 cycle-{iterator.cycle} {f:if(condition: '{iterator.cycle} > 6', then: 'hidden')}" itemscope="itemscope" itemtype="https://schema.org/Article">
+    <n:excludeDisplayedNews newsItem="{newsItem}"/>
+    
+    <f:if condition="{newsItem.mediaPreviews}">
+        <f:then>
+
+                <f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+                    <f:if condition="{mediaElement.originalResource.type} == 2">
+                        <f:image image="{mediaElement}" 
+                                class="w-full h-auto" 
+                                width="800c" 
+                                height="800c"
+                                title="{mediaElement.originalResource.title}" 
+                                alt="{mediaElement.originalResource.alternative}" 
+                                loading="{settings.list.media.image.lazyLoading}" />
+                    </f:if>
+                </f:alias>
+                <div class="flex flex-row md:flex-col justify-between">
+                    <div class="property-name text-[19px] leading-[1.2em] pt-2 p-2 md:p-0 md:pt-2 flex-1" itemprop="headline">
+                        <f:format.html>{newsItem.title}</f:format.html>
+						<!-- Optional: Add teaser text -->
+						<f:if condition="{newsItem.teaser}">
+							{newsItem.teaser -> f:format.html()}
+						</f:if>
+                    </div>
+
+                </div>
+
+        </f:then>
+		<f:else>
+
+				<div class="flex flex-row md:flex-col justify-between">
+					<div class="property-name text-[19px] leading-[1.2em] pt-2 p-2 md:p-0 md:pt-2 flex-1" itemprop="headline">
+						<f:format.html>{newsItem.title}</f:format.html>
+						<!-- Optional: Add teaser text -->
+						<f:if condition="{newsItem.teaser}">
+							{newsItem.teaser -> f:format.html()}
+						</f:if>
+					</div>
+
+				</div>
+
+		</f:else>
+    </f:if>
+</div>
+</html>

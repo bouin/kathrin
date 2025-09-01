@@ -1,0 +1,104 @@
+<div class="relative">
+    <!-- Header section -->
+    <div class="grid grid-cols-12 p-2 bg-white main-navigation-header">
+        <div class="col-span-4">
+        </div>
+        <div class="col-span-4 text-center mx-auto">
+            <f:link.page pageUid="1" class="text-black">
+                <f:image src="EXT:site_package/Resources/Public/Images/Logo.svg" alt="ADOWIA Immobilien AG Logo" width="180px" height="auto" />
+            </f:link.page>
+        </div>
+        <div class="col-span-4">
+            <div class="flex justify-end items-end block md:hidden">
+                <!-- Two-stripe Hamburger Button -->
+                <button class="relative group" id="mobile-menu-button">
+                    <div class="relative flex overflow-hidden items-center justify-center w-[30px] h-[30px] transform transition-all">
+                        <div class="flex flex-col justify-between w-[23px] h-[8px] transform transition-all duration-300 origin-center">
+                            <div class="bg-black h-[2px] w-[23px] transform transition-all duration-300 origin-center group-[.active]:translate-y-[3px] group-[.active]:rotate-45"></div>
+                            <div class="bg-black h-[2px] w-[23px] transform transition-all duration-300 origin-center group-[.active]:-translate-y-[3px] group-[.active]:-rotate-45"></div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation menu -->
+        <div class="transition-all duration-300 ease-in-out bg-white w-full absolute left-0 right-0 overflow-hidden" id="mobile-menu">
+            <nav class="px-4 py-2 pt-24 pb-5">
+                <ul class="font-medium dontapplyhidden">
+                    <li>
+                        <a href="#kaufen" class="link-underline">Immobilie kaufen</a>
+                    </li>
+                    <li>
+                        <a href="#verkaufen" class="link-underline">Immobilie verkaufen</a>
+                    </li>
+                    <li>
+                        <a href="#bewerten" class="link-underline">Immobilie bewerten</a>
+                    </li>
+                    <li>
+                        <a href="#uber-mich" class="link-underline">Über mich</a>
+                    </li>
+                    <li>
+                        <a href="#kontakt" class="link-underline">Kontakt</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<script>
+    const menuButton = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    const header = document.querySelector('.main-navigation-header');
+    const mediaQuery = window.matchMedia('(min-width: 768px)');
+    
+    // Set initial position
+    menu.style.top = header.offsetHeight - 2 + 'px';
+    menu.style.height = '0';
+    menu.style.opacity = '0';
+    
+    let menuHeight;
+    
+    function toggleMenu(event) {
+        if (mediaQuery.matches) return; // Disable on desktop
+        
+        if (event.type === 'click') {
+            // Toggle behavior only for click
+            menuButton.classList.toggle('active');
+            
+            if (menu.style.height === '0px' || menu.style.height === '') {
+                menu.style.height = 'auto';
+                menu.style.opacity = '0';
+                menuHeight = menu.offsetHeight + 'px';
+                menu.style.height = '0';
+                
+                menu.offsetHeight; // Trigger reflow
+                
+                menu.style.height = 'auto';
+                menu.style.opacity = '1';
+            } else {
+                menu.style.height = '0';
+                menu.style.opacity = '0';
+            }
+        } else {
+            // Close menu for scroll and resize
+            menuButton.classList.remove('active');
+            menu.style.height = '0';
+            menu.style.opacity = '0';
+        }
+    }
+
+    // Add event listeners
+    menuButton.addEventListener('click', toggleMenu);
+    window.addEventListener('scroll', toggleMenu);
+    window.addEventListener('resize', toggleMenu);
+</script>
+
+<style>
+    #mobile-menu {
+        transform-origin: top;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        z-index: 50;
+    }
+</style>

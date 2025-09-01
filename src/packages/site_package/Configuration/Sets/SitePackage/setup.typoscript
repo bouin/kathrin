@@ -1,0 +1,25 @@
+@import './TypoScript/'
+
+plugin.tx_news {
+    view {
+        templateRootPaths {
+            10 = EXT:site_package/Resources/Private/News/Templates/
+        }
+        partialRootPaths {
+            10 = EXT:site_package/Resources/Private/News/Partials/
+        }
+        layoutRootPaths {
+            10 = EXT:site_package/Resources/Private/News/Layouts/
+        }
+    }
+}
+
+plugin.tx_news {
+    settings {
+        detail {
+            #showPrevNext = 1
+            showSimplePrevNext = 1
+        }
+    }
+}
+

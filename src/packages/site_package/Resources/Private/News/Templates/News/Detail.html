@@ -1,0 +1,108 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  xmlns:rx="http://typo3.org/ns/Reelworx/RxShariff/ViewHelper"
+	  data-namespace-typo3-fluid="true">
+
+<f:layout name="Detail" />
+
+<!--
+	=====================
+		News/Detail.html
+-->
+
+<f:section name="content">
+	<f:if condition="{newsItem}">
+		<f:then>
+			<n:format.nothing>
+				<n:excludeDisplayedNews newsItem="{newsItem}" />
+				<f:if condition="{settings.detail.showMetaTags}">
+					<f:render partial="Detail/Opengraph" arguments="{newsItem: newsItem, settings:settings}" />
+				</f:if>
+
+			</n:format.nothing>
+			
+
+			<n:renderMedia news="{newsItem}" imgClass="img-responsive" videoClass="video-wrapper" audioClass="audio-wrapper">
+
+
+				<f:if condition="{newsItem.contentElements}">
+					<!-- content elements -->
+					<f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">{newsItem.contentElementIdList}</f:cObject>
+				</f:if>
+
+
+
+			</n:renderMedia>
+
+			<f:if condition="{settings.backPid}">
+				<!-- Link Back -->
+				<div class="news-backlink-wrap">
+					<f:link.page pageUid="{settings.backPid}">
+						<f:translate key="back-link" />
+					</f:link.page>
+				</div>
+			</f:if>
+
+			<f:if condition="{settings.detail.showSocialShareButtons}">
+				<n:extensionLoaded extensionKey="rx_shariff">
+					<f:render partial="Detail/Shariff" />
+				</n:extensionLoaded>
+			</f:if>
+
+			<div class="container">
+				<div class="grid grid-cols-12 p-3 md:p-5">
+					<div class="col-span-3">
+						<p>
+						<a href="/#kaufen" class="link-underline checkifactive link-fixed">Zurück</a>
+					</p>
+				</div>
+				<div class="col-span-12 md:col-span-9 xl:col-span-6">
+					
+					<f:if condition="{settings.detail.showPrevNext}">
+						<n:simplePrevNext pidList="{newsItem.pid}" news="{newsItem}" as="paginated" sortField="datetime">
+							<f:if condition="{paginated}">
+								<ul class="pager">
+									<f:comment>
+										<f:if condition="{paginated.prev}">
+											<li class="previous">
+												<n:link newsItem="{paginated.prev}" settings="{settings}">
+													<span aria-hidden="true">&larr; </span>Zum vorherigem Objekt
+												</n:link>
+											</li>
+										</f:if>
+									</f:comment>
+									<f:if condition="{paginated.next}">
+										<f:then>
+											<li class="next text-center pb-8">
+												<n:link newsItem="{paginated.next}" settings="{settings}" class="link-underline-fine mail-arrow text-[17px] ">
+													Zum nächsten Objekt ({paginated.next.title})
+												</n:link>
+											</li>
+										</f:then>
+										<f:else>
+											<f:if condition="{paginated.prev}">
+												<li class="text-center pb-8">
+													<n:link newsItem="{paginated.prev}" settings="{settings}" class="link-underline-fine mail-arrow text-[17px] ">
+														Zum vorherigen Objekt ({paginated.prev.title})
+													</n:link>
+												</li>
+											</f:if>
+										</f:else>
+										
+									</f:if>
+								</ul>
+							</f:if>
+						</n:simplePrevNext>
+					</f:if>	
+				</div>
+				<div class="col-span-3">
+				</div>
+			</div>
+			</div>
+		</f:then>
+		<f:else>
+
+		</f:else>
+	</f:if>
+</f:section>
+</html>
