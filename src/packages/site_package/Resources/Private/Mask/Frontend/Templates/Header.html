@@ -1,0 +1,21 @@
+<f:if condition="{data.header}">
+    {data.header}
+</f:if>
+<f:if condition="{data.tx_mask_short_description}">
+    {data.tx_mask_short_description -> f:format.html()}
+</f:if>
+<f:if condition="{data.tx_mask_full_text}">
+    {data.tx_mask_full_text -> f:format.html()}
+</f:if>
+<f:variable name="colorsToChoose" value="{data.tx_mask_colors_to_choose}"/>
+<f:switch expression="{colorsToChoose}">
+    <f:case value="0">
+        {colorsToChoose}
+    </f:case>
+    <f:case value="1">
+        {colorsToChoose}
+    </f:case>
+    <f:case value="2">
+        {colorsToChoose}
+    </f:case>
+</f:switch>

@@ -1,0 +1,126 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "header": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "header",
+                        "tx_mask_short_description",
+                        "tx_mask_full_text",
+                        "tx_mask_colors_to_choose"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "header",
+                    "label": "header",
+                    "labels": [
+                        "",
+                        "Short Text",
+                        "Text",
+                        "Colors"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 0
+                }
+            },
+            "sql": {
+                "tx_mask_colors_to_choose": {
+                    "tt_content": {
+                        "tx_mask_colors_to_choose": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_full_text": {
+                    "tt_content": {
+                        "tx_mask_full_text": "mediumtext"
+                    }
+                },
+                "tx_mask_short_description": {
+                    "tt_content": {
+                        "tx_mask_short_description": "mediumtext"
+                    }
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "tx_mask_colors_to_choose": {
+                    "config": {
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Default",
+                                "value": "0"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Yellow",
+                                "value": "1"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Pink",
+                                "value": "2"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Green",
+                                "value": "3"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "fullKey": "tx_mask_colors_to_choose",
+                    "key": "colors_to_choose",
+                    "type": "select"
+                },
+                "tx_mask_full_text": {
+                    "config": {
+                        "enableRichtext": 1,
+                        "type": "text"
+                    },
+                    "fullKey": "tx_mask_full_text",
+                    "key": "full_text",
+                    "type": "richtext"
+                },
+                "tx_mask_short_description": {
+                    "config": {
+                        "enableRichtext": 1,
+                        "type": "text"
+                    },
+                    "fullKey": "tx_mask_short_description",
+                    "key": "short_description",
+                    "type": "richtext"
+                }
+            }
+        }
+    }
+}

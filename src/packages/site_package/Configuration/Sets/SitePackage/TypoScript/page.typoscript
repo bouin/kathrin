@@ -9,8 +9,7 @@ page {
     bodyTagCObject = COA
     bodyTagCObject {
         10 = TEXT
-        #10.value = <body id="pageId-{field:uid}" class="parent-{field:pid} page-{field:uid} flex flex-col min-h-screen">
-        10.value = <body id="pageId-{field:uid}" class="parent-{field:pid} page-{field:uid} thisisworking">
+        10.value = <body id="page-Id-{field:uid}" class="parent-{field:pid} page-{field:uid} thisisworking">
         10.insertData = 1
     }
 
@@ -18,7 +17,7 @@ page {
     headerData.20.value (
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     )
     
     headerData.30 = TEXT
@@ -202,107 +201,3 @@ page {
         
     }
 }
-
-config.recordLinks.tx_news {
-    typolink {
-        # Detail page
-        parameter = 4
-        additionalParams.data = field:uid
-        additionalParams.wrap = &tx_news_pi1[controller]=News&tx_news_pi1[action]=detail&tx_news_pi1[news]=|
-    }
-}
-
-plugin.tx_seo.config {
-    xmlSitemap {
-        sitemaps {
-            news {
-                provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
-                config {
-                    # The database table for news records
-                    table = tx_news_domain_model_news
-                    
-                    # How to sort the news entries
-                    sortField = sorting
-                    
-                    # Which field contains the last modification date
-                    lastModifiedField = tstamp
-                    
-                    # Fields for SEO frequency and priority
-                    changeFreqField = sitemap_changefreq
-                    priorityField = sitemap_priority
-                    
-                    # Where to find news records: 
-                    pid = 4        # <- PUT YOUR NEWS STORAGE FOLDER UID HERE
-                    recursive = 2  # How many subpages deep to look
-                    
-                    url {
-                        # The UID of your news detail page
-                        pageId = 5  # <- PUT YOUR NEWS DETAIL PAGE UID HERE
-                        
-                        # Maps the news UID to the URL parameter
-                        fieldToParameterMap {
-                            uid = tx_news_pi1[news]
-                        }
-
-                        # Additional parameters needed for news detail view
-                        additionalGetParameters {
-                            tx_news_pi1.controller = News
-                            tx_news_pi1.action = detail
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-lib.textforfooter1 = RECORDS
-lib.textforfooter1 {
-    source = 22
-    sourceInsertData = 1
-    tables = tt_content
-    select {
-        orderBy = sorting
-        pidInList = 9
-    }
-}
-
-lib.topnews = RECORDS
-lib.topnews {
-    source = 23
-    sourceInsertData = 1
-    tables = tt_content
-    select {
-        orderBy = sorting
-        pidInList = 9
-    }
-}
-lib.comingsoonnews = RECORDS
-lib.comingsoonnews {
-    source = 30
-    sourceInsertData = 1
-    tables = tt_content
-    select {
-        orderBy = sorting
-        pidInList = 9
-    }
-}
-
-# Create a TypoScript RECORD object to fetch the image with ID 518
-lib.myImage = RECORDS
-lib.myImage {
-    source = 518  # The image ID you want to fetch
-    sourceInsertData = 1
-    tables = sys_file  # The table containing the image
-}
-
-plugin.tx_news {
-    settings {
-        detail {
-            showPrevNext = 1
-        }
-    }
-}
-
-
-

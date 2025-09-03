@@ -16,7 +16,8 @@
     },
     "allow-plugins": {
       "typo3/cms-composer-installers": true,
-      "typo3/class-alias-loader": true
+      "typo3/class-alias-loader": true,
+      "helhum/dotenv-connector": true
     }
   },
   "authors": [{
@@ -25,6 +26,7 @@
   }],
   "require": {
     "typo3/cms-core": "13.4.17",
+    "typo3/cms-adminpanel": "13.4.17",
     "typo3/cms-backend": "13.4.17",
     "typo3/cms-belog": "13.4.17",
     "typo3/cms-beuser": "13.4.17",
@@ -46,7 +48,9 @@
     "typo3/cms-redirects": "13.4.17",
     "georgringer/news": "12.3.1",
     "studio-thom-pfister/site-package": "dev-main",
-    "friendsoftypo3/content-blocks": "^1.3"
+    "friendsoftypo3/content-blocks": "^1.3",
+    "helhum/dotenv-connector": "^3.1",
+    "mask/mask": "^9.0"
   },
   "autoload": {
     "psr-4": {

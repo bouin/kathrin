@@ -48,6 +48,10 @@
 /.DS_Store
 **/.DS_Store
 
+# ApplicationContext
+.env
+/config/AdditionalConfiguration.php
+
 # Tailwind files
 !/src/*
 !composer.json

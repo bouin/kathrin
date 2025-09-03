@@ -29,7 +29,7 @@ config {
     doctype = html5
     removeDefaultJS = {$config.removeDefaultJS}
     inlineStyle2TempFile = 1
-    admPanel = 0
+    admPanel = 1
     debug = 0
     cache_period = 86400
     sendCacheHeaders = {$config.sendCacheHeaders}
