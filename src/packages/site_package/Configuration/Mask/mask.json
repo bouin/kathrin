@@ -4,6 +4,32 @@
     "tables": {
         "tt_content": {
             "elements": {
+                "contact": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "header",
+                        "tx_mask_image_image",
+                        "tx_mask_text_about"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "contact",
+                    "label": "Contact",
+                    "labels": [
+                        "Header",
+                        "Image",
+                        "Text about"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                },
                 "header": {
                     "color": "#000000",
                     "colorOverlay": "#000000",
@@ -11,10 +37,12 @@
                         "header",
                         "tx_mask_short_description",
                         "tx_mask_full_text",
-                        "tx_mask_colors_to_choose"
+                        "tx_mask_colors_to_choose",
+                        "tx_mask_layout"
                     ],
                     "description": "",
                     "descriptions": [
+                        "",
                         "",
                         "",
                         "",
@@ -28,10 +56,43 @@
                         "",
                         "Short Text",
                         "Text",
-                        "Colors"
+                        "Colors",
+                        "Layout"
                     ],
                     "shortLabel": "",
                     "sorting": 0
+                },
+                "home_one": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "header",
+                        "tx_mask_short_text_about_project",
+                        "tx_mask_title_of_the_project",
+                        "tx_mask_image_of_the_project",
+                        "tx_mask_link_to_go_to"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "home_one",
+                    "label": "Home one",
+                    "labels": [
+                        "",
+                        "About Project",
+                        "Title",
+                        "Image",
+                        "Link"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 2
                 }
             },
             "sql": {
@@ -45,9 +106,44 @@
                         "tx_mask_full_text": "mediumtext"
                     }
                 },
+                "tx_mask_image_image": {
+                    "tt_content": {
+                        "tx_mask_image_image": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_image_of_the_project": {
+                    "tt_content": {
+                        "tx_mask_image_of_the_project": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_layout": {
+                    "tt_content": {
+                        "tx_mask_layout": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_link_to_go_to": {
+                    "tt_content": {
+                        "tx_mask_link_to_go_to": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
                 "tx_mask_short_description": {
                     "tt_content": {
                         "tx_mask_short_description": "mediumtext"
+                    }
+                },
+                "tx_mask_short_text_about_project": {
+                    "tt_content": {
+                        "tx_mask_short_text_about_project": "mediumtext"
+                    }
+                },
+                "tx_mask_text_about": {
+                    "tt_content": {
+                        "tx_mask_text_about": "mediumtext"
+                    }
+                },
+                "tx_mask_title_of_the_project": {
+                    "tt_content": {
+                        "tx_mask_title_of_the_project": "mediumtext"
                     }
                 }
             },
@@ -111,6 +207,89 @@
                     "key": "full_text",
                     "type": "richtext"
                 },
+                "tx_mask_image_image": {
+                    "config": {
+                        "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "fileUploadAllowed": 1,
+                            "useSortable": 1
+                        },
+                        "minitems": ""
+                    },
+                    "fullKey": "tx_mask_image_image",
+                    "imageoverlayPalette": 1,
+                    "key": "image_image",
+                    "type": "file"
+                },
+                "tx_mask_image_of_the_project": {
+                    "config": {
+                        "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "fileUploadAllowed": 1,
+                            "useSortable": 1
+                        },
+                        "minitems": ""
+                    },
+                    "fullKey": "tx_mask_image_of_the_project",
+                    "imageoverlayPalette": 1,
+                    "key": "image_of_the_project",
+                    "type": "file"
+                },
+                "tx_mask_layout": {
+                    "config": {
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Default",
+                                "value": "1"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Two cols",
+                                "value": "2"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "fullKey": "tx_mask_layout",
+                    "key": "layout",
+                    "type": "select"
+                },
+                "tx_mask_link_to_go_to": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "link"
+                    },
+                    "fullKey": "tx_mask_link_to_go_to",
+                    "key": "link_to_go_to",
+                    "type": "link"
+                },
                 "tx_mask_short_description": {
                     "config": {
                         "enableRichtext": 1,
@@ -118,6 +297,33 @@
                     },
                     "fullKey": "tx_mask_short_description",
                     "key": "short_description",
+                    "type": "richtext"
+                },
+                "tx_mask_short_text_about_project": {
+                    "config": {
+                        "enableRichtext": 1,
+                        "type": "text"
+                    },
+                    "fullKey": "tx_mask_short_text_about_project",
+                    "key": "short_text_about_project",
+                    "type": "richtext"
+                },
+                "tx_mask_text_about": {
+                    "config": {
+                        "enableRichtext": 1,
+                        "type": "text"
+                    },
+                    "fullKey": "tx_mask_text_about",
+                    "key": "text_about",
+                    "type": "richtext"
+                },
+                "tx_mask_title_of_the_project": {
+                    "config": {
+                        "enableRichtext": 1,
+                        "type": "text"
+                    },
+                    "fullKey": "tx_mask_title_of_the_project",
+                    "key": "title_of_the_project",
                     "type": "richtext"
                 }
             }

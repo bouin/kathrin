@@ -1,6 +1,6 @@
 <f:if condition="{page.id}==1">
     <f:then>
-        <header class="relative w-full h-screen">
+        <header class="relative w-full h-dvh">
             <!-- Background video -->
             <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
                 <source src="/fileadmin/user_upload/videos/home.mp4" type="video/mp4">
@@ -9,7 +9,7 @@
 </f:if>
 <f:if condition="{page.id}==2">
     <f:then>
-        <header class="relative w-full h-screen">
+        <header class="relative w-full h-dvh">
             <!-- Background video -->
             <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
                 <source src="/fileadmin/user_upload/videos/work.mp4" type="video/mp4">
@@ -18,7 +18,7 @@
 </f:if>
 <f:if condition="{page.id}==3">
     <f:then>
-        <header class="relative w-full h-screen">
+        <header class="relative w-full h-dvh">
             <!-- Background video -->
             <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
                 <source src="/fileadmin/user_upload/videos/info.mp4" type="video/mp4">
@@ -29,26 +29,27 @@
             <!-- MENU -->
             <nav id="nav-ok" class="fixed top-0 left-0 w-full bg-transparent">
                 <div class="max-w-7xl mx-auto px-4">
-                    <div class="flex justify-between items-center py-3">
+                    <div class="flex justify-between items-top md:items-center py-3">
 
                         <!-- Mobile logo/title -->
-                        <div class="flex w-1/2 items-center logotext">
+                        <div class="flex w-1/2 items-center items-top md:items-center logotext">
                             <f:link.page pageUid="1" class="hover:italic">
-                                <span class="text-[31px]">Kathrin Wiedmer</span>
+                                <span class="text-[28px] md:text-[31px]">Kathrin Wiedmer</span>
                             </f:link.page>
                         </div>
 
                         <!-- Nav links -->
-                        <nav class="flex w-1/2 justify-end items-center">
-                            <div class="flex w-1/2 justify-end items-center">
-                                <ul class="flex space-x-3">
-                                    <li>
-                                        <f:link.page pageUid="2" class="text-[31px] hover:italic">
+                        <nav class="flex w-1/2 justify-end items-top md:items-center">
+                            <div class="flex w-1/2 justify-end items-top md:items-center">
+                                <ul class="flex space-x-3 items-top md:items-center">
+                                    <li class="flex items-top md:items-center">
+
+                                        <f:link.page pageUid="2" class="text-[28px] md:text-[31px] hover:italic leading-4 {f:if(condition: '{page.id}==2',then:'italic')}">
                                             Arbeiten
                                         </f:link.page>
                                     </li>
-                                    <li>
-                                        <f:link.page pageUid="3" class="text-[31px] hover:italic">
+                                    <li class="flex items-top md:items-center">
+                                        <f:link.page pageUid="3" class="text-[28px] md:text-[31px] hover:italic leading-4 {f:if(condition: '{page.id}==3',then:'italic')}">
                                             Info
                                         </f:link.page>
                                     </li>
@@ -59,7 +60,7 @@
                     </div>
                 </div>
             </nav>
-<f:if condition="{page.id}==1 || {page.id}==2">
+<f:if condition="{page.id}==1 || {page.id}==2 || {page.id}==3">
     <f:then>
             <!-- MENU -->
         </header>

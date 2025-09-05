@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="py-8 bck- {f:if(condition: '{colorsToChoose}',then:'md:h-screen')} mask-element frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+        <div class="container text-center mx-auto flex flex-col">
+            <div class="w-full md:w-5/12 mx-auto pt-10 pb-14">
+                <f:for each="{data.tx_mask_image_image}" as="file">
+                    <f:image image="{file}" class="w-full h-auto"  />
+                </f:for>
+            </div>
+
+            <div class="text-[15px] pb-8">
+                <f:if condition="{data.header}">
+                    {data.header}
+                </f:if>
+            </div>
+            <div class="instrument text-[96px] leading-6 [&_a:hover]:italic">
+                <f:if condition="{data.tx_mask_text_about}">
+                    {data.tx_mask_text_about -> f:format.html()}
+                </f:if>
+            </div>
+        </div>
+    </div>
+</html>

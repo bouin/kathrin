@@ -59,6 +59,10 @@
 
       }
     }
+    img {
+        max-width: unset;
+        min-width: unset;
+    }
   }
 
 @layer components {
@@ -97,6 +101,7 @@
     }
     .logotext * {
         color: var(--color-blue);
+        line-height: .9;
     }
     h1,h2,h3,.instrument, .instrument * {
         font-family: "Instrument Serif", serif;

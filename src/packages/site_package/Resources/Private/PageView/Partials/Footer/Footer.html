@@ -1,24 +1,37 @@
-<footer id="kontakt" class="p">
+<footer id="kontakt" class="p-4 pt-12 md:pt-20 pb-7">
     <div class="flex column md:row justify-between items-end">
-        <div class="w-full md:w-8/12">
-            <div class="div1 pr-24">
+        <div class="w-full md:w-12/12 flex flex-row items-top lg:items-end [&_a:hover]:italic">
+            <div class="div1 pr-3 md:pr-8 lg:pr-14 ">
                 <div class="logo">
-                    <f:image src="EXT:site_package/Resources/Public/Images/Logo.svg" alt="Logo Kathrin Wiedmer" class="w-[110px]"/>
+                    <f:image src="EXT:site_package/Resources/Public/Images/Logo.svg" alt="Logo Kathrin Wiedmer" class="w-[88px] h-auto"/>
                 </div>
             </div>
-            <div class="div2 text-[17px] text-brand">
-                defbreifr
+            <div class="div2 text-[17px] text-brand pr-8 lg:pr-14 [&_p]:!m-0 [&_p]:!leading-[1.15]">
+                <f:cObject typoscriptObjectPath="lib.dynamicRecord" data="{dataelo: 5}" />
+                <div class="block lg:hidden pt-3">
+                    <f:cObject typoscriptObjectPath="lib.dynamicRecord" data="{dataelo: 6}" />
+                </div>
+                <div class="block md:hidden pt-3">
+                    <f:cObject typoscriptObjectPath="lib.dynamicRecord" data="{dataelo: 7}" />
+                </div>
+                <div class="block md:hidden pt-3">
+                    <f:cObject typoscriptObjectPath="lib.dynamicRecord" data="{dataelo: 8}" />
+                </div>
             </div>
-            <div class="div3">
-
+            <div class="div3 text-[17px] text-brand pr-8 lg:pr-14 [&_p]:!m-0 [&_p]:!leading-[1.15] hidden lg:block">
+                <f:cObject typoscriptObjectPath="lib.dynamicRecord" data="{dataelo: 6}" />
             </div>
-            <div class="div4">
-
+            <div class="div4 text-[17px] text-brand pr-8 lg:pr-14 [&_p]:!m-0 elo [&_p]:!leading-[1.15] hidden md:block">
+                <f:cObject typoscriptObjectPath="lib.dynamicRecord" data="{dataelo: 7}" />
+                <div class="block xl:hidden pt-3">
+                    <f:cObject typoscriptObjectPath="lib.dynamicRecord" data="{dataelo: 8}" />
+                </div>
             </div>
-            <div class="div5">
-
+            <div class="div5 text-[17px] text-brand [&_p]:!m-0 [&_p]:!leading-[1.15] hidden xl:block">
+                <f:cObject typoscriptObjectPath="lib.dynamicRecord" data="{dataelo: 8}" />
             </div>
         </div>
     </div>
 
 </footer>
+<div class="pb-[200px] text-white bg-brand"></div>

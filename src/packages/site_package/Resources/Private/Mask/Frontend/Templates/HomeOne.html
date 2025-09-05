@@ -1,0 +1,31 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class=" frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+        <div class="relative">
+            <f:if condition="{data.tx_mask_link_to_go_to}">
+                <f:link.typolink parameter="{data.tx_mask_link_to_go_to}">
+                    <div class="relative left-0 right-0 h auto w-full overflow-hidden">
+                        <f:for each="{data.tx_mask_image_of_the_project}" as="file">
+                            <f:image image="{file}" width="1920c" height="1280c" class="w-full h-auto" />
+                        </f:for>
+                        <div class="absolute flex top-4 left-4 text-[18px] md:w-4/12 pr-[3%] instrument text-white">
+                            <div class="post-left">
+                                <f:if condition="{data.tx_mask_short_text_about_project}">
+                                    {data.tx_mask_short_text_about_project -> f:format.html()}
+                                </f:if>
+                            </div>
+                        </div>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  text-[41px] md:text-[82px] w-full text-center uppercase text-white">
+                            <div class="middle [&_p]:!mb-0">
+                                <f:if condition="{data.tx_mask_title_of_the_project}">
+                                    {data.tx_mask_title_of_the_project -> f:format.html()}
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+                </f:link.typolink>
+            </f:if>
+        </div>
+    </div>
+</html>
+
+

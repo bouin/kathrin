@@ -208,3 +208,9 @@ lib.video1 {
   source = 4
   dontCheckPid = 1
 }
+
+lib.dynamicRecord = RECORDS
+lib.dynamicRecord {
+  tables = tt_content
+  source.field = dataelo
+}
