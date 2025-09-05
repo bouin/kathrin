@@ -554,9 +554,29 @@ video {
   display: none;
 }
 
+/* Beispiel: statische Schnitte */
+
+@font-face {
+  font-family: "ESDokument";
+
+  src:
+                url("../Fonts/ESDokument-Rg.woff") format("woff"),
+                url("../Fonts/ESDokument-Rg.woff2") format("woff2");
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+nav * {
+  letter-spacing: -.07rem !important;
+}
+
 html {
+  font-family: "ESDokument", sans-serif;
   font-size: 20pt;
-  line-height: 1.2em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -588,22 +608,12 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Roboto", sans-serif;
+  font-family: "ESDokument", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   p {
     margin-bottom: .8em !important;
-  }
-  strong {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-  }
-  .font-medium {
-    strong {
-      font-family: "Roboto", sans-serif;
-      font-weight: 500;
-    }
   }
 }
 
@@ -681,6 +691,36 @@ nav li a {
 
 .logotext * {
   color: var(--color-blue);
+}
+
+h1,h2,h3,.instrument, .instrument * {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+}
+
+p {
+  line-height: 1.1 !important;
+}
+
+/*pink*/
+
+.bck-2{
+  background: #FFDEEE;
+  background: #ffcfe6;
+}
+
+/*yellow*/
+
+.bck-1{
+  background: #FFFC96;
+}
+
+/*green*/
+
+.bck-3{
+  background: #C6E3DD;
 }
 
 .sr-only {
@@ -1345,6 +1385,10 @@ nav li a {
   width: 2.5rem;
 }
 
+.w-11 {
+  width: 2.75rem;
+}
+
 .w-2 {
   width: 0.5rem;
 }
@@ -1371,6 +1415,10 @@ nav li a {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-\[110px\] {
+  width: 110px;
 }
 
 .w-auto {
@@ -1713,14 +1761,14 @@ nav li a {
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
 
-.bg-\[\#ECE6DA\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(236 230 218 / var(--tw-bg-opacity, 1));
-}
-
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
+.bg-blue-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity, 1));
 }
 
 .bg-cyan-600 {
@@ -1743,6 +1791,21 @@ nav li a {
   background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
 }
 
+.bg-green-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(187 247 208 / var(--tw-bg-opacity, 1));
+}
+
+.bg-purple-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 213 255 / var(--tw-bg-opacity, 1));
+}
+
+.bg-red-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 202 202 / var(--tw-bg-opacity, 1));
+}
+
 .bg-transparent {
   background-color: transparent;
 }
@@ -1750,6 +1813,11 @@ nav li a {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.bg-yellow-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 240 138 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-90 {
@@ -1779,6 +1847,10 @@ nav li a {
 
 .p-1 {
   padding: 0.25rem;
+}
+
+.p-12 {
+  padding: 3rem;
 }
 
 .p-2 {
@@ -1811,14 +1883,34 @@ nav li a {
   padding-right: 0.25rem;
 }
 
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
+.px-24 {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.px-36 {
+  padding-left: 9rem;
+  padding-right: 9rem;
 }
 
 .px-4 {
@@ -1831,6 +1923,11 @@ nav li a {
   padding-right: 1.25rem;
 }
 
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -1839,6 +1936,11 @@ nav li a {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .py-2 {
@@ -1950,6 +2052,10 @@ nav li a {
   padding-left: 0.25rem;
 }
 
+.pl-12 {
+  padding-left: 3rem;
+}
+
 .pl-2 {
   padding-left: 0.5rem;
 }
@@ -1960,6 +2066,10 @@ nav li a {
 
 .pl-5 {
   padding-left: 1.25rem;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
 }
 
 .pr-0 {
@@ -1986,6 +2096,10 @@ nav li a {
   padding-right: 5rem;
 }
 
+.pr-24 {
+  padding-right: 6rem;
+}
+
 .pr-3 {
   padding-right: 0.75rem;
 }
@@ -1996,6 +2110,10 @@ nav li a {
 
 .pr-5 {
   padding-right: 1.25rem;
+}
+
+.pr-6 {
+  padding-right: 1.5rem;
 }
 
 .pr-8 {
@@ -2135,6 +2253,10 @@ nav li a {
   line-height: 2rem;
 }
 
+.text-\[10vw\] {
+  font-size: 10vw;
+}
+
 .text-\[17px\] {
   font-size: 17px;
 }
@@ -2228,6 +2350,11 @@ nav li a {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-brand {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 255 / var(--tw-text-opacity, 1));
 }
 
 .underline {
@@ -2381,13 +2508,13 @@ nav li a {
   font-style: italic;
 }
 
-.hover\:underline:hover {
-  text-decoration-line: underline;
-}
-
 @media (min-width: 768px) {
   .md\:col-span-9 {
     grid-column: span 9 / span 9;
+  }
+
+  .md\:w-8\/12 {
+    width: 66.666667%;
   }
 
   .md\:grid-cols-2 {
@@ -2406,12 +2533,24 @@ nav li a {
     padding: 1.25rem;
   }
 
+  .md\:pl-12 {
+    padding-left: 3rem;
+  }
+
+  .md\:pr-12 {
+    padding-right: 3rem;
+  }
+
   .md\:pt-2 {
     padding-top: 0.5rem;
   }
 }
 
 @media (min-width: 1024px) {
+  .lg\:w-10\/12 {
+    width: 83.333333%;
+  }
+
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }

@@ -8,9 +8,22 @@
 
 /* Custom styles */
 @layer base {
+    /* Beispiel: statische Schnitte */
+    @font-face {
+        font-family: "ESDokument";
+        src:
+                url("../Fonts/ESDokument-Rg.woff") format("woff"),
+                url("../Fonts/ESDokument-Rg.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    nav * {
+        letter-spacing: -.07rem !important;
+    }
     html {
+      font-family: "ESDokument", sans-serif;
       font-size: 20pt;
-      line-height: 1.2em;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -37,7 +50,7 @@
     body {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      font-family: "Roboto", sans-serif;
+      font-family: "ESDokument", sans-serif;
       font-optical-sizing: auto;
       font-weight: 400;
       font-style: normal;
@@ -45,17 +58,6 @@
         margin-bottom: .8em !important;
 
       }
-        strong {
-            font-family: "Roboto", sans-serif;
-            font-weight: 400;
-        }
-        .font-medium {
-            strong {
-                font-family: "Roboto", sans-serif;
-                font-weight: 500;
-            }
-
-        }
     }
   }
 
@@ -95,5 +97,27 @@
     }
     .logotext * {
         color: var(--color-blue);
+    }
+    h1,h2,h3,.instrument, .instrument * {
+        font-family: "Instrument Serif", serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 1;
+    }
+    p {
+        line-height: 1.1 !important;
+    }
+    /*pink*/
+    .bck-2{
+        background: #FFDEEE;
+        background: #ffcfe6;
+    }
+    /*yellow*/
+    .bck-1{
+        background: #FFFC96;
+    }
+    /*green*/
+    .bck-3{
+        background: #C6E3DD;
     }
 }

@@ -1,21 +1,27 @@
-<f:if condition="{data.header}">
-    {data.header}
-</f:if>
-<f:if condition="{data.tx_mask_short_description}">
-    {data.tx_mask_short_description -> f:format.html()}
-</f:if>
-<f:if condition="{data.tx_mask_full_text}">
-    {data.tx_mask_full_text -> f:format.html()}
-</f:if>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:variable name="colorsToChoose" value="{data.tx_mask_colors_to_choose}"/>
-<f:switch expression="{colorsToChoose}">
-    <f:case value="0">
-        {colorsToChoose}
-    </f:case>
-    <f:case value="1">
-        {colorsToChoose}
-    </f:case>
-    <f:case value="2">
-        {colorsToChoose}
-    </f:case>
-</f:switch>
+<div id="c{data.uid}" class="py-8 bck-{colorsToChoose} {f:if(condition: '{colorsToChoose}',then:'h-screen')} mask-element frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+    <div class="container mx-auto flex flex-col justify-between h-full">
+
+                <div class="top-0 left-0 right-0 w-12/12 lg:w-12/12 mx-auto">
+                    <h1 class="instrument text-[10vw] text-center pl-2 pr-2">
+                        <f:if condition="{data.header}">
+                            {data.header}
+                        </f:if>
+                    </h1>
+                    <div class="instrument">
+                        <f:if condition="{data.tx_mask_short_description}">
+                            {data.tx_mask_short_description -> f:transform.html()}
+                        </f:if>
+                    </div>
+                </div>
+                <div class="instrument pl-2 pr-2 md:pl-12 md:pr-12 mx-auto w-12/12 lg:w-10/12">
+                    <f:if condition="{data.tx_mask_full_text}">
+                        {data.tx_mask_full_text -> f:transform.html()}
+                    </f:if>
+                </div>
+
+    </div>
+</div>
+</html>
+

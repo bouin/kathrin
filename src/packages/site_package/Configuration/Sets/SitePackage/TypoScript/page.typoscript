@@ -201,3 +201,10 @@ page {
         
     }
 }
+
+lib.video1 = RECORDS
+lib.video1 {
+  tables = tt_content
+  source = 4
+  dontCheckPid = 1
+}

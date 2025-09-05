@@ -3,8 +3,28 @@
         <header class="relative w-full h-screen">
             <!-- Background video -->
             <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-                <source src="/fileadmin/user_upload/videos/Kathrin_Wiedmer.mp4" type="video/mp4">
+                <source src="/fileadmin/user_upload/videos/home.mp4" type="video/mp4">
             </video>
+    </f:then>
+</f:if>
+<f:if condition="{page.id}==2">
+    <f:then>
+        <header class="relative w-full h-screen">
+            <!-- Background video -->
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/fileadmin/user_upload/videos/work.mp4" type="video/mp4">
+            </video>
+    </f:then>
+</f:if>
+<f:if condition="{page.id}==3">
+    <f:then>
+        <header class="relative w-full h-screen">
+            <!-- Background video -->
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/fileadmin/user_upload/videos/info.mp4" type="video/mp4">
+            </video>
+    </f:then>
+</f:if>
 
             <!-- MENU -->
             <nav id="nav-ok" class="fixed top-0 left-0 w-full bg-transparent">
@@ -13,8 +33,8 @@
 
                         <!-- Mobile logo/title -->
                         <div class="flex w-1/2 items-center logotext">
-                            <f:link.page pageUid="1" class="w-full hover:italic">
-                                <div class="text-[31px]">Kathrin Wiedmer</div>
+                            <f:link.page pageUid="1" class="hover:italic">
+                                <span class="text-[31px]">Kathrin Wiedmer</span>
                             </f:link.page>
                         </div>
 
@@ -39,46 +59,9 @@
                     </div>
                 </div>
             </nav>
+<f:if condition="{page.id}==1 || {page.id}==2">
+    <f:then>
             <!-- MENU -->
         </header>
     </f:then>
-
-    <f:else>
-        <div>
-            <!-- MENU -->
-            <nav id="nav-ok" class="fixed top-0 left-0 w-full bg-transparent">
-                <div class="max-w-7xl mx-auto px-4">
-                    <div class="flex justify-between items-center py-3">
-
-                        <!-- Mobile logo/title -->
-                        <div class="flex w-1/2 items-center logotext">
-                            <f:link.page pageUid="1" class="w-full hover:italic">
-                                <div class="text-[31px]">Kathrin Wiedmer</div>
-                            </f:link.page>
-                        </div>
-
-                        <!-- Nav links -->
-                        <nav class="flex w-1/2 justify-end items-center">
-                            <div class="flex w-1/2 justify-end items-center">
-                                <ul class="flex space-x-3">
-                                    <li>
-                                        <f:link.page pageUid="2" class="text-[31px] hover:italic">
-                                            Arbeiten
-                                        </f:link.page>
-                                    </li>
-                                    <li>
-                                        <f:link.page pageUid="3" class="text-[31px] hover:italic">
-                                            Info
-                                        </f:link.page>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </nav>
-            <!-- MENU -->
-        </div>
-    </f:else>
 </f:if>

@@ -6,7 +6,8 @@ module.exports = {
         '../../../ContentBlocks/ContentElements/**/**/*.html',
         '../../Private/PageView/**/**/*.html',
         '../../Private/ContentElements/**/**/**/*.html',
-        '../../Private/news/**/**/*.html',
+        '../../Private/News/**/**/*.html',
+        '../../Private/Mask/**/**/*.html',
         '../Private/PageView/**/**/*.html', // Watch all HTML files in PageView
         '../Css/**/*.css'
     ],
@@ -14,5 +15,14 @@ module.exports = {
     safelist: [
         'link-fixed'
       ],
+    theme: {
+        extend: {
+            colors: {
+                brand: {
+                    DEFAULT: '#0000FF'
+                },
+            },
+        },
+    },
 }
 
